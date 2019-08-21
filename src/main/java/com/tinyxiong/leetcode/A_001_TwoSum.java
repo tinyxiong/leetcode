@@ -1,4 +1,8 @@
-package com.crossoverjie.leetcode.easy;
+package com.tinyxiong.leetcode;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Function: [2, 7, 11, 15], target = 9 return [0,1]
@@ -7,7 +11,7 @@ package com.crossoverjie.leetcode.easy;
  *         Date: 02/12/2017 22:47
  * @since JDK 1.8
  */
-public class TwoSum {
+public class A_001_TwoSum {
 
     /**
      *
@@ -28,5 +32,17 @@ public class TwoSum {
             }
         }
         return ret ;
+    }
+
+    public int[] twoSum2(int[] sums, int target) {
+        Map<Integer, Integer> elements = new LinkedHashMap<>();
+        for (int i = 0; i < sums.length; i++) {
+            int delta = target - sums[i];
+            if (elements.containsKey(delta)) {
+                return new int[]{elements.get(delta), i};
+            }
+            elements.put(sums[i], i);
+        }
+        throw new RuntimeException("No solution");
     }
 }

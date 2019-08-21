@@ -1,4 +1,4 @@
-package com.crossoverjie.leetcode.easy;
+package com.tinyxiong.leetcode.data;
 
 /**
  * Function:
