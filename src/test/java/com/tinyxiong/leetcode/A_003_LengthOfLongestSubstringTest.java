@@ -37,4 +37,36 @@ public class A_003_LengthOfLongestSubstringTest {
 
         assertEquals(10, len);
     }
+
+    @Test
+    public void lengthOfLongestSubstring21() {
+        String s = "abcabcbb";
+        int len = A_003_LengthOfLongestSubstring.lengthOfLongestSubstring2(s);
+
+        assertEquals(3, len);
+    }
+
+    @Test
+    public void lengthOfLongestSubstring22() {
+        String s = "bbbbb";
+        int len = A_003_LengthOfLongestSubstring.lengthOfLongestSubstring2(s);
+
+        assertEquals(1, len);
+    }
+
+    @Test
+    public void lengthOfLongestSubstring23() {
+        String s = "pwwkew";
+        int len = A_003_LengthOfLongestSubstring.lengthOfLongestSubstring2(s);
+
+        assertEquals(3, len);
+    }
+
+    @Test
+    public void lengthOfLongestSubstring24() {
+        String s = "abcdefgg123456789";
+        int len = A_003_LengthOfLongestSubstring.lengthOfLongestSubstring2(s);
+
+        assertEquals(10, len);
+    }
 }

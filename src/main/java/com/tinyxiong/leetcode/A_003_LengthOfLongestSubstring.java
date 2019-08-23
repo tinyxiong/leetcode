@@ -1,16 +1,18 @@
 package com.tinyxiong.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * "abcabcbb" 3
  * "bbbbb" 1
  * "pwwkew" 3
  */
-public class A_003_LengthOfLongestSubstring {
+class A_003_LengthOfLongestSubstring {
 
-    public static int lengthOfLongestSubstring(String s) {
+    static int lengthOfLongestSubstring(String s) {
         if (s == null || "".equals(s)) return 0;
         Map<Character, Integer> m = new HashMap<>(s.length());
         char[] chars = s.toCharArray();
@@ -37,5 +39,19 @@ public class A_003_LengthOfLongestSubstring {
             }
         }
         return len;
+    }
+
+    static int lengthOfLongestSubstring2(String s) {
+        Set<Character> set = new HashSet<>(s.length());
+        int i = 0, j = 0, ret = 0;
+        while (j < s.length()) {
+            if (!set.contains(s.charAt(j))) {
+                ret = Math.max(ret, j - i + 1);
+                set.add(s.charAt(j++));
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return ret;
     }
 }
